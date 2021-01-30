@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Kozyrets App</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <center>
+	   <h1>Canopy load calcucalator</h1>
+  </center>
+	<div class="form-group col-md-3">
+		<label for="ywt">Your weight:</label>
+		<input type="text" class="form-control" id="weight" value="1">
+	</div>
+
+	<div class="form-group col-md-3">
+		<label for="eqwt">Equipment weight:</label>
+		<input type="text" class="form-control" id="equipment" value="1">
+	</div>
+
+  <div class="form-group col-md-3">
+		<label for="cs">Canopy size (sq ft):</label>
+		<input type="text" class="form-control" id="size" value="1">
+	</div>
+
+  <input type="button" value="Calculate Load" onclick="calculateLoad()">
+  <input type="text" id="load">
+
+  <input type="reset" value="Reset" onclick="resetState()">
+
+	<script>
+		require('./render.js');
+
+		function calculateLoad(){
+			let weight = parseInt(document.getElementById('weight').value) + parseInt(document.getElementById('equipment').value);
+			let size = document.getElementById('size').value;
+      document.getElementById('load').value = weight/size;
+		}
+
+    function resetState(){
+      document.getElementById('load').value = "";
+    }
+
+	</script>
+</body>
+</html>

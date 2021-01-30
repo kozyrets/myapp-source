@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^11.2.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-winstaller": "^4.0.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.2.0"
+  }
+}
